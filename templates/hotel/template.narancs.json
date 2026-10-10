@@ -1,0 +1,344 @@
+{
+  "format": "narancs-template",
+  "version": 1,
+  "meta": {
+    "name": {
+      "en": "Hotel reception",
+      "hu": "Szálloda recepció"
+    },
+    "description": {
+      "en": "Guest welcome, hotel services, tonight’s events, weather, Wi-Fi and a guest feedback form.",
+      "hu": "Vendégköszöntő, szolgáltatások, esti programok, időjárás, Wi-Fi és vendégvisszajelzés."
+    },
+    "category": "hospitality",
+    "author": "Narancs Signage",
+    "license": "CC0-1.0",
+    "preview": "s5",
+    "icon": "🏨",
+    "languages": [
+      "en",
+      "hu"
+    ]
+  },
+  "forms": [
+    {
+      "ref": "f1",
+      "name": {
+        "en": "Feedback",
+        "hu": "Visszajelzés"
+      },
+      "title": {
+        "en": "How was your visit?",
+        "hu": "Milyen volt nálunk?"
+      },
+      "intro": {
+        "en": "Your opinion helps us improve. Thank you!",
+        "hu": "Véleményed segít nekünk fejlődni. Köszönjük!"
+      },
+      "submit_text": {
+        "en": "Send",
+        "hu": "Küldés"
+      },
+      "thanks_text": {
+        "en": "Thank you for your feedback! 🧡",
+        "hu": "Köszönjük a visszajelzést! 🧡"
+      },
+      "fields": [
+        {
+          "type": "smiley",
+          "label": {
+            "en": "Overall",
+            "hu": "Összességében"
+          },
+          "required": true
+        },
+        {
+          "type": "rating",
+          "label": {
+            "en": "Service",
+            "hu": "Kiszolgálás"
+          }
+        },
+        {
+          "type": "textarea",
+          "label": {
+            "en": "Anything we could do better?",
+            "hu": "Min javíthatnánk?"
+          }
+        }
+      ]
+    }
+  ],
+  "calendars": [
+    {
+      "ref": "c1",
+      "name": {
+        "en": "Hotel events",
+        "hu": "Programok"
+      },
+      "color": "var(--accent)",
+      "events": [
+        {
+          "title": {
+            "en": "Wine tasting",
+            "hu": "Borkóstoló"
+          },
+          "location": {
+            "en": "Lobby bar",
+            "hu": "Lobby bár"
+          },
+          "day": 0,
+          "start": "19:00",
+          "end": "21:00"
+        },
+        {
+          "title": {
+            "en": "Live piano music",
+            "hu": "Élő zongoraszó"
+          },
+          "location": {
+            "en": "Restaurant",
+            "hu": "Étterem"
+          },
+          "day": 1,
+          "start": "19:30",
+          "end": "22:00",
+          "rrule": "FREQ=WEEKLY"
+        },
+        {
+          "title": {
+            "en": "Guided city walk",
+            "hu": "Városnéző séta"
+          },
+          "location": {
+            "en": "Meet at reception",
+            "hu": "Találkozó a recepción"
+          },
+          "day": 2,
+          "start": "10:00",
+          "end": "12:00"
+        }
+      ]
+    }
+  ],
+  "media": [],
+  "slides": [
+    {
+      "ref": "s1",
+      "name": {
+        "en": "Welcome guests",
+        "hu": "Vendégköszöntő"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "left",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "kicker": {
+          "en": "Welcome to",
+          "hu": "Üdvözöljük!"
+        },
+        "title": "{{org_name}}",
+        "body": {
+          "en": "We wish you a pleasant stay. Our reception is open 24 hours a day.",
+          "hu": "Kellemes pihenést kívánunk! A recepció a nap 24 órájában a rendelkezésére áll."
+        },
+        "show_logo": true
+      }
+    },
+    {
+      "ref": "s2",
+      "name": {
+        "en": "Hotel services",
+        "hu": "Szolgáltatások"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Our services",
+          "hu": "Szolgáltatásaink"
+        },
+        "subtitle": "",
+        "columns": 2,
+        "cards": [
+          {
+            "icon": "🍳",
+            "title": {
+              "en": "Breakfast",
+              "hu": "Reggeli"
+            },
+            "text": {
+              "en": "Restaurant · 07:00–10:30",
+              "hu": "Étterem · 07:00–10:30"
+            }
+          },
+          {
+            "icon": "🧖",
+            "title": "Spa & wellness",
+            "text": {
+              "en": "Level -1 · 09:00–21:00",
+              "hu": "-1. szint · 09:00–21:00"
+            }
+          },
+          {
+            "icon": "🏋️",
+            "title": {
+              "en": "Gym",
+              "hu": "Edzőterem"
+            },
+            "text": {
+              "en": "Open 24/7 with your room key",
+              "hu": "Éjjel-nappal, a szobakulccsal"
+            }
+          },
+          {
+            "icon": "🛎️",
+            "title": {
+              "en": "Room service",
+              "hu": "Szobaszerviz"
+            },
+            "text": {
+              "en": "Dial 9 from your room",
+              "hu": "Hívja a 9-es melléket"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s3",
+      "name": {
+        "en": "Hotel events",
+        "hu": "Esti programok"
+      },
+      "type": "calendar",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Tonight and this week",
+          "hu": "Ma este és a héten"
+        },
+        "calendar_ids": [
+          "c1"
+        ],
+        "view": "list",
+        "days_ahead": 7,
+        "max_items": 7
+      }
+    },
+    {
+      "ref": "s4",
+      "name": {
+        "en": "Clock & weather",
+        "hu": "Óra és időjárás"
+      },
+      "type": "clock",
+      "duration": 10,
+      "data": {
+        "style": "digital",
+        "show_seconds": false,
+        "show_date": true,
+        "show_weather": true,
+        "show_forecast": true,
+        "title": {
+          "en": "Enjoy your stay!",
+          "hu": "Kellemes pihenést!"
+        }
+      }
+    },
+    {
+      "ref": "s5",
+      "name": {
+        "en": "Services with the weather",
+        "hu": "Szolgáltatások időjárással"
+      },
+      "type": "zones",
+      "duration": 30,
+      "data": {
+        "layout": "right",
+        "size": 32,
+        "gap": true,
+        "zones": [
+          {
+            "transition": "fade",
+            "items": [
+              {
+                "slide_id": "s2"
+              },
+              {
+                "slide_id": "s3"
+              }
+            ]
+          },
+          {
+            "transition": "fade",
+            "items": [
+              {
+                "slide_id": "s4"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s6",
+      "name": {
+        "en": "Guest Wi-Fi",
+        "hu": "Vendég Wi-Fi"
+      },
+      "type": "qr",
+      "duration": 12,
+      "data": {
+        "url": "WIFI:T:WPA;S:{{org_name}} Guest;P:change-me;;",
+        "title": {
+          "en": "Free Wi-Fi",
+          "hu": "Ingyenes Wi-Fi"
+        },
+        "text": {
+          "en": "Scan with your phone camera to connect",
+          "hu": "Olvasd be a telefonod kamerájával a csatlakozáshoz"
+        }
+      }
+    },
+    {
+      "ref": "s7",
+      "name": {
+        "en": "Feedback form",
+        "hu": "Visszajelzés űrlap"
+      },
+      "type": "form",
+      "duration": 45,
+      "data": {
+        "form_id": "f1"
+      }
+    }
+  ],
+  "playlist": {
+    "name": {
+      "en": "Hotel",
+      "hu": "Szálloda"
+    },
+    "transition": "fade",
+    "items": [
+      {
+        "slide": "s1",
+        "duration": null
+      },
+      {
+        "slide": "s5",
+        "duration": null
+      },
+      {
+        "slide": "s6",
+        "duration": null
+      },
+      {
+        "slide": "s7",
+        "duration": null
+      }
+    ]
+  }
+}

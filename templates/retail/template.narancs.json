@@ -1,0 +1,291 @@
+{
+  "format": "narancs-template",
+  "version": 1,
+  "meta": {
+    "name": {
+      "en": "Shop",
+      "hu": "Üzlet"
+    },
+    "description": {
+      "en": "Weekend sale with countdown, featured products, opening hours, loyalty QR code and customer feedback.",
+      "hu": "Hétvégi akció visszaszámlálóval, kiemelt termékek, nyitvatartás, törzsvásárlói QR kód és vásárlói visszajelzés."
+    },
+    "category": "retail",
+    "author": "Narancs Signage",
+    "license": "CC0-1.0",
+    "preview": "s3",
+    "icon": "🛍️",
+    "languages": [
+      "en",
+      "hu"
+    ]
+  },
+  "forms": [
+    {
+      "ref": "f1",
+      "name": {
+        "en": "Feedback",
+        "hu": "Visszajelzés"
+      },
+      "title": {
+        "en": "How was your visit?",
+        "hu": "Milyen volt nálunk?"
+      },
+      "intro": {
+        "en": "Your opinion helps us improve. Thank you!",
+        "hu": "Véleményed segít nekünk fejlődni. Köszönjük!"
+      },
+      "submit_text": {
+        "en": "Send",
+        "hu": "Küldés"
+      },
+      "thanks_text": {
+        "en": "Thank you for your feedback! 🧡",
+        "hu": "Köszönjük a visszajelzést! 🧡"
+      },
+      "fields": [
+        {
+          "type": "smiley",
+          "label": {
+            "en": "Overall",
+            "hu": "Összességében"
+          },
+          "required": true
+        },
+        {
+          "type": "rating",
+          "label": {
+            "en": "Service",
+            "hu": "Kiszolgálás"
+          }
+        },
+        {
+          "type": "textarea",
+          "label": {
+            "en": "Anything we could do better?",
+            "hu": "Min javíthatnánk?"
+          }
+        }
+      ]
+    }
+  ],
+  "calendars": [],
+  "media": [],
+  "slides": [
+    {
+      "ref": "s1",
+      "name": {
+        "en": "Weekend sale",
+        "hu": "Hétvégi akció"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "center",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 120,
+        "kicker": {
+          "en": "This weekend only",
+          "hu": "Csak ezen a hétvégén"
+        },
+        "title": {
+          "en": "20% off everything",
+          "hu": "Mindenre 20% kedvezmény"
+        },
+        "body": {
+          "en": "Show this screen at the checkout or use your loyalty card.",
+          "hu": "Mutasd fel a pénztárnál, vagy használd a törzsvásárlói kártyád."
+        }
+      }
+    },
+    {
+      "ref": "s2",
+      "name": {
+        "en": "Sale countdown",
+        "hu": "Akció visszaszámláló"
+      },
+      "type": "countdown",
+      "duration": 10,
+      "data": {
+        "title": {
+          "en": "The sale starts in",
+          "hu": "Az akció kezdetéig"
+        },
+        "target": "{{date+5}}T09:00",
+        "done_text": {
+          "en": "The sale has started! 🎉",
+          "hu": "Elkezdődött az akció! 🎉"
+        },
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))"
+      }
+    },
+    {
+      "ref": "s3",
+      "name": {
+        "en": "Featured products",
+        "hu": "Kiemelt termékek"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "New arrivals",
+          "hu": "Új termékek"
+        },
+        "subtitle": {
+          "en": "Ask our staff for sizes and colours",
+          "hu": "Méretekért és színekért kérdezd kollégáinkat"
+        },
+        "columns": 3,
+        "cards": [
+          {
+            "icon": "👟",
+            "title": {
+              "en": "Running shoes",
+              "hu": "Futócipő"
+            },
+            "text": {
+              "en": "Lightweight, breathable",
+              "hu": "Könnyű, szellőző"
+            },
+            "badge": {
+              "en": "NEW",
+              "hu": "ÚJ"
+            }
+          },
+          {
+            "icon": "🧥",
+            "title": {
+              "en": "Rain jacket",
+              "hu": "Esőkabát"
+            },
+            "text": {
+              "en": "Waterproof, packable",
+              "hu": "Vízálló, összehajtható"
+            },
+            "badge": "-20%"
+          },
+          {
+            "icon": "🎒",
+            "title": {
+              "en": "City backpack",
+              "hu": "Városi hátizsák"
+            },
+            "text": {
+              "en": "Laptop pocket, 22 L",
+              "hu": "Laptoptartó, 22 l"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s4",
+      "name": {
+        "en": "Opening hours",
+        "hu": "Nyitvatartás"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Opening hours",
+          "hu": "Nyitvatartás"
+        },
+        "subtitle": "",
+        "columns": 3,
+        "cards": [
+          {
+            "icon": "📅",
+            "title": {
+              "en": "Monday – Friday",
+              "hu": "Hétfő – péntek"
+            },
+            "text": "09:00 – 20:00"
+          },
+          {
+            "icon": "🌤️",
+            "title": {
+              "en": "Saturday",
+              "hu": "Szombat"
+            },
+            "text": "09:00 – 18:00"
+          },
+          {
+            "icon": "☀️",
+            "title": {
+              "en": "Sunday",
+              "hu": "Vasárnap"
+            },
+            "text": "10:00 – 16:00"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s5",
+      "name": {
+        "en": "Loyalty club",
+        "hu": "Törzsvásárlói klub"
+      },
+      "type": "qr",
+      "duration": 12,
+      "data": {
+        "url": "https://example.com/club",
+        "title": {
+          "en": "Join our loyalty club",
+          "hu": "Csatlakozz a törzsvásárlói klubhoz"
+        },
+        "text": {
+          "en": "Collect points with every purchase",
+          "hu": "Gyűjts pontokat minden vásárlással"
+        }
+      }
+    },
+    {
+      "ref": "s6",
+      "name": {
+        "en": "Feedback form",
+        "hu": "Visszajelzés űrlap"
+      },
+      "type": "form",
+      "duration": 45,
+      "data": {
+        "form_id": "f1"
+      }
+    }
+  ],
+  "playlist": {
+    "name": {
+      "en": "Shop",
+      "hu": "Üzlet"
+    },
+    "transition": "fade",
+    "items": [
+      {
+        "slide": "s1",
+        "duration": null
+      },
+      {
+        "slide": "s2",
+        "duration": null
+      },
+      {
+        "slide": "s3",
+        "duration": null
+      },
+      {
+        "slide": "s4",
+        "duration": null
+      },
+      {
+        "slide": "s5",
+        "duration": null
+      },
+      {
+        "slide": "s6",
+        "duration": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "format": "narancs-template",
+  "version": 1,
+  "meta": {
+    "name": {
+      "en": "Restaurant & café",
+      "hu": "Étterem és kávézó"
+    },
+    "description": {
+      "en": "Welcome, today’s menu with the clock alongside, daily special, opening hours, Wi-Fi and a feedback form.",
+      "hu": "Üdvözlés, mai menü az órával egymás mellett, napi ajánlat, nyitvatartás, Wi-Fi és visszajelzés űrlap."
+    },
+    "category": "food",
+    "author": "Narancs Signage",
+    "license": "CC0-1.0",
+    "preview": "s4",
+    "icon": "🍽️",
+    "languages": [
+      "en",
+      "hu"
+    ]
+  },
+  "forms": [
+    {
+      "ref": "f1",
+      "name": {
+        "en": "Feedback",
+        "hu": "Visszajelzés"
+      },
+      "title": {
+        "en": "How was your visit?",
+        "hu": "Milyen volt nálunk?"
+      },
+      "intro": {
+        "en": "Your opinion helps us improve. Thank you!",
+        "hu": "Véleményed segít nekünk fejlődni. Köszönjük!"
+      },
+      "submit_text": {
+        "en": "Send",
+        "hu": "Küldés"
+      },
+      "thanks_text": {
+        "en": "Thank you for your feedback! 🧡",
+        "hu": "Köszönjük a visszajelzést! 🧡"
+      },
+      "fields": [
+        {
+          "type": "smiley",
+          "label": {
+            "en": "Overall",
+            "hu": "Összességében"
+          },
+          "required": true
+        },
+        {
+          "type": "rating",
+          "label": {
+            "en": "Service",
+            "hu": "Kiszolgálás"
+          }
+        },
+        {
+          "type": "textarea",
+          "label": {
+            "en": "Anything we could do better?",
+            "hu": "Min javíthatnánk?"
+          }
+        }
+      ]
+    }
+  ],
+  "calendars": [],
+  "media": [],
+  "slides": [
+    {
+      "ref": "s1",
+      "name": {
+        "en": "Welcome",
+        "hu": "Üdvözlés"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "left",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "kicker": {
+          "en": "Welcome to",
+          "hu": "Üdvözlünk!"
+        },
+        "title": "{{org_name}}",
+        "body": {
+          "en": "Fresh, seasonal dishes made in our kitchen every day. Take a seat – we will be right with you!",
+          "hu": "Friss, szezonális ételek, minden nap a saját konyhánkból. Foglalj helyet, mindjárt jövünk!"
+        },
+        "show_logo": true
+      }
+    },
+    {
+      "ref": "s2",
+      "name": {
+        "en": "Today’s menu",
+        "hu": "Mai menü"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Today’s menu",
+          "hu": "Mai menü"
+        },
+        "subtitle": {
+          "en": "Served 11:30–15:00",
+          "hu": "Tálalás 11:30–15:00"
+        },
+        "columns": 2,
+        "cards": [
+          {
+            "icon": "🥣",
+            "title": {
+              "en": "Soup of the day",
+              "hu": "Napi leves"
+            },
+            "text": {
+              "en": "Creamy pumpkin soup with roasted seeds",
+              "hu": "Sütőtökkrémleves pirított magokkal"
+            },
+            "badge": {
+              "en": "€4.90",
+              "hu": "1 490 Ft"
+            }
+          },
+          {
+            "icon": "🍝",
+            "title": {
+              "en": "Main course",
+              "hu": "Főétel"
+            },
+            "text": {
+              "en": "Chicken paprikash with homemade dumplings",
+              "hu": "Csirkepaprikás galuskával"
+            },
+            "badge": {
+              "en": "€11.50",
+              "hu": "3 290 Ft"
+            }
+          },
+          {
+            "icon": "🥗",
+            "title": {
+              "en": "Vegetarian",
+              "hu": "Vegetáriánus"
+            },
+            "text": {
+              "en": "Grilled vegetables with feta and couscous",
+              "hu": "Grillezett zöldségek fetával és kuszkusszal"
+            },
+            "badge": {
+              "en": "€10.90",
+              "hu": "2 990 Ft"
+            }
+          },
+          {
+            "icon": "🍰",
+            "title": {
+              "en": "Dessert",
+              "hu": "Desszert"
+            },
+            "text": {
+              "en": "Cottage cheese dumplings with sour cream",
+              "hu": "Túrógombóc tejföllel"
+            },
+            "badge": {
+              "en": "€4.50",
+              "hu": "1 290 Ft"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s3",
+      "name": {
+        "en": "Clock & weather",
+        "hu": "Óra és időjárás"
+      },
+      "type": "clock",
+      "duration": 10,
+      "data": {
+        "style": "digital",
+        "show_seconds": false,
+        "show_date": true,
+        "show_weather": true,
+        "show_forecast": true,
+        "title": {
+          "en": "Enjoy your meal!",
+          "hu": "Jó étvágyat!"
+        }
+      }
+    },
+    {
+      "ref": "s4",
+      "name": {
+        "en": "Menu with the clock",
+        "hu": "Menü órával"
+      },
+      "type": "zones",
+      "duration": 30,
+      "data": {
+        "layout": "right",
+        "size": 30,
+        "gap": true,
+        "zones": [
+          {
+            "transition": "fade",
+            "items": [
+              {
+                "slide_id": "s2"
+              }
+            ]
+          },
+          {
+            "transition": "fade",
+            "items": [
+              {
+                "slide_id": "s3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s5",
+      "name": {
+        "en": "Daily special",
+        "hu": "Napi ajánlat"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "center",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "kicker": {
+          "en": "Chef’s special",
+          "hu": "A séf ajánlata"
+        },
+        "title": {
+          "en": "Lunch menu: soup + main + drink",
+          "hu": "Menü: leves + főétel + ital"
+        },
+        "body": {
+          "en": "Only €13.90 on weekdays between 11:30 and 15:00.",
+          "hu": "Hétköznap 11:30 és 15:00 között mindössze 3 990 Ft."
+        }
+      }
+    },
+    {
+      "ref": "s6",
+      "name": {
+        "en": "Opening hours",
+        "hu": "Nyitvatartás"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Opening hours",
+          "hu": "Nyitvatartás"
+        },
+        "subtitle": "",
+        "columns": 3,
+        "cards": [
+          {
+            "icon": "📅",
+            "title": {
+              "en": "Monday – Friday",
+              "hu": "Hétfő – péntek"
+            },
+            "text": "07:00 – 22:00"
+          },
+          {
+            "icon": "🌤️",
+            "title": {
+              "en": "Saturday",
+              "hu": "Szombat"
+            },
+            "text": "09:00 – 23:00"
+          },
+          {
+            "icon": "☀️",
+            "title": {
+              "en": "Sunday",
+              "hu": "Vasárnap"
+            },
+            "text": "09:00 – 21:00"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s7",
+      "name": {
+        "en": "Guest Wi-Fi",
+        "hu": "Vendég Wi-Fi"
+      },
+      "type": "qr",
+      "duration": 12,
+      "data": {
+        "url": "WIFI:T:WPA;S:{{org_name}} Guest;P:change-me;;",
+        "title": {
+          "en": "Free Wi-Fi",
+          "hu": "Ingyenes Wi-Fi"
+        },
+        "text": {
+          "en": "Scan with your phone camera to connect",
+          "hu": "Olvasd be a telefonod kamerájával a csatlakozáshoz"
+        }
+      }
+    },
+    {
+      "ref": "s8",
+      "name": {
+        "en": "Feedback form",
+        "hu": "Visszajelzés űrlap"
+      },
+      "type": "form",
+      "duration": 45,
+      "data": {
+        "form_id": "f1"
+      }
+    }
+  ],
+  "playlist": {
+    "name": {
+      "en": "Restaurant",
+      "hu": "Étterem"
+    },
+    "transition": "fade",
+    "items": [
+      {
+        "slide": "s1",
+        "duration": null
+      },
+      {
+        "slide": "s4",
+        "duration": null
+      },
+      {
+        "slide": "s5",
+        "duration": null
+      },
+      {
+        "slide": "s6",
+        "duration": null
+      },
+      {
+        "slide": "s7",
+        "duration": null
+      },
+      {
+        "slide": "s8",
+        "duration": null
+      }
+    ]
+  }
+}

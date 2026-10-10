@@ -1,0 +1,378 @@
+{
+  "format": "narancs-template",
+  "version": 1,
+  "meta": {
+    "name": {
+      "en": "Conference & event",
+      "hu": "Konferencia, rendezvény"
+    },
+    "description": {
+      "en": "Agenda next to the clock, speakers, countdown to the keynote, Wi-Fi and a session feedback form.",
+      "hu": "Program az órával, előadók, visszaszámlálás a nyitóelőadásig, Wi-Fi és előadás-értékelés."
+    },
+    "category": "events",
+    "author": "Narancs Signage",
+    "license": "CC0-1.0",
+    "preview": "s4",
+    "icon": "🎤",
+    "languages": [
+      "en",
+      "hu"
+    ]
+  },
+  "forms": [
+    {
+      "ref": "f1",
+      "name": {
+        "en": "Feedback",
+        "hu": "Visszajelzés"
+      },
+      "title": {
+        "en": "Rate the session",
+        "hu": "Értékeld az előadást"
+      },
+      "intro": {
+        "en": "Your opinion helps us improve. Thank you!",
+        "hu": "Véleményed segít nekünk fejlődni. Köszönjük!"
+      },
+      "submit_text": {
+        "en": "Send",
+        "hu": "Küldés"
+      },
+      "thanks_text": {
+        "en": "Thank you for your feedback! 🧡",
+        "hu": "Köszönjük a visszajelzést! 🧡"
+      },
+      "fields": [
+        {
+          "type": "smiley",
+          "label": {
+            "en": "Overall",
+            "hu": "Összességében"
+          },
+          "required": true
+        },
+        {
+          "type": "rating",
+          "label": {
+            "en": "Service",
+            "hu": "Kiszolgálás"
+          }
+        },
+        {
+          "type": "textarea",
+          "label": {
+            "en": "Anything we could do better?",
+            "hu": "Min javíthatnánk?"
+          }
+        }
+      ]
+    }
+  ],
+  "calendars": [
+    {
+      "ref": "c1",
+      "name": {
+        "en": "Agenda",
+        "hu": "Program"
+      },
+      "color": "var(--accent)",
+      "events": [
+        {
+          "title": {
+            "en": "Registration & coffee",
+            "hu": "Regisztráció és kávé"
+          },
+          "location": {
+            "en": "Foyer",
+            "hu": "Előtér"
+          },
+          "day": 1,
+          "start": "08:00",
+          "end": "09:00"
+        },
+        {
+          "title": {
+            "en": "Keynote: The future of work",
+            "hu": "Nyitóelőadás: A munka jövője"
+          },
+          "location": {
+            "en": "Main hall",
+            "hu": "Nagyterem"
+          },
+          "day": 1,
+          "start": "09:00",
+          "end": "10:00"
+        },
+        {
+          "title": {
+            "en": "Product design that sticks",
+            "hu": "Termékdizájn, ami megmarad"
+          },
+          "location": {
+            "en": "Room A",
+            "hu": "A terem"
+          },
+          "day": 1,
+          "start": "10:30",
+          "end": "11:30"
+        },
+        {
+          "title": {
+            "en": "Lunch",
+            "hu": "Ebéd"
+          },
+          "location": {
+            "en": "Restaurant",
+            "hu": "Étterem"
+          },
+          "day": 1,
+          "start": "12:00",
+          "end": "13:00"
+        },
+        {
+          "title": {
+            "en": "Data-driven decisions",
+            "hu": "Adatvezérelt döntések"
+          },
+          "location": {
+            "en": "Room B",
+            "hu": "B terem"
+          },
+          "day": 1,
+          "start": "13:30",
+          "end": "14:30"
+        }
+      ]
+    }
+  ],
+  "media": [],
+  "slides": [
+    {
+      "ref": "s1",
+      "name": {
+        "en": "Welcome",
+        "hu": "Üdvözlés"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "center",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "kicker": {
+          "en": "Welcome to",
+          "hu": "Üdvözlünk!"
+        },
+        "title": {
+          "en": "{{org_name}} Summit",
+          "hu": "{{org_name}} Konferencia"
+        },
+        "body": {
+          "en": "Registration is open in the foyer. Badges and the programme are at the desk.",
+          "hu": "A regisztráció az előtérben, a névkártyák és a program a pultnál."
+        },
+        "show_logo": true
+      }
+    },
+    {
+      "ref": "s2",
+      "name": {
+        "en": "Agenda",
+        "hu": "Program"
+      },
+      "type": "calendar",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Agenda",
+          "hu": "Program"
+        },
+        "calendar_ids": [
+          "c1"
+        ],
+        "view": "list",
+        "days_ahead": 2,
+        "max_items": 7
+      }
+    },
+    {
+      "ref": "s3",
+      "name": {
+        "en": "Clock & weather",
+        "hu": "Óra és időjárás"
+      },
+      "type": "clock",
+      "duration": 10,
+      "data": {
+        "style": "digital",
+        "show_seconds": false,
+        "show_date": true,
+        "show_weather": true,
+        "show_forecast": true,
+        "title": ""
+      }
+    },
+    {
+      "ref": "s4",
+      "name": {
+        "en": "Agenda with the clock",
+        "hu": "Program órával"
+      },
+      "type": "zones",
+      "duration": 30,
+      "data": {
+        "layout": "right",
+        "size": 30,
+        "gap": true,
+        "zones": [
+          {
+            "transition": "fade",
+            "items": [
+              {
+                "slide_id": "s2"
+              }
+            ]
+          },
+          {
+            "transition": "fade",
+            "items": [
+              {
+                "slide_id": "s3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s5",
+      "name": {
+        "en": "Speakers",
+        "hu": "Előadók"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Speakers",
+          "hu": "Előadók"
+        },
+        "subtitle": "",
+        "columns": 3,
+        "cards": [
+          {
+            "icon": "🎤",
+            "title": "Laura Bennett",
+            "text": {
+              "en": "Keynote · The future of work",
+              "hu": "Nyitóelőadás · A munka jövője"
+            }
+          },
+          {
+            "icon": "💡",
+            "title": "Dávid Tóth",
+            "text": {
+              "en": "Product design that sticks",
+              "hu": "Termékdizájn, ami megmarad"
+            }
+          },
+          {
+            "icon": "📊",
+            "title": "Mira Lang",
+            "text": {
+              "en": "Data-driven decisions",
+              "hu": "Adatvezérelt döntések"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s6",
+      "name": {
+        "en": "Keynote countdown",
+        "hu": "Visszaszámlálás"
+      },
+      "type": "countdown",
+      "duration": 10,
+      "data": {
+        "title": {
+          "en": "The keynote starts in",
+          "hu": "A nyitóelőadásig"
+        },
+        "target": "{{date+1}}T09:00",
+        "done_text": {
+          "en": "The keynote is starting – please take your seats!",
+          "hu": "Kezdődik a nyitóelőadás – kérjük, foglaljatok helyet!"
+        },
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))"
+      }
+    },
+    {
+      "ref": "s7",
+      "name": {
+        "en": "Guest Wi-Fi",
+        "hu": "Vendég Wi-Fi"
+      },
+      "type": "qr",
+      "duration": 12,
+      "data": {
+        "url": "WIFI:T:WPA;S:{{org_name}} Guest;P:change-me;;",
+        "title": {
+          "en": "Free Wi-Fi",
+          "hu": "Ingyenes Wi-Fi"
+        },
+        "text": {
+          "en": "Scan with your phone camera to connect",
+          "hu": "Olvasd be a telefonod kamerájával a csatlakozáshoz"
+        }
+      }
+    },
+    {
+      "ref": "s8",
+      "name": {
+        "en": "Feedback form",
+        "hu": "Visszajelzés űrlap"
+      },
+      "type": "form",
+      "duration": 45,
+      "data": {
+        "form_id": "f1"
+      }
+    }
+  ],
+  "playlist": {
+    "name": {
+      "en": "Conference",
+      "hu": "Konferencia"
+    },
+    "transition": "fade",
+    "items": [
+      {
+        "slide": "s1",
+        "duration": null
+      },
+      {
+        "slide": "s4",
+        "duration": null
+      },
+      {
+        "slide": "s5",
+        "duration": null
+      },
+      {
+        "slide": "s6",
+        "duration": null
+      },
+      {
+        "slide": "s7",
+        "duration": null
+      },
+      {
+        "slide": "s8",
+        "duration": null
+      }
+    ]
+  }
+}

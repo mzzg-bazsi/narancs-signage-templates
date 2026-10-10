@@ -1,0 +1,342 @@
+{
+  "format": "narancs-template",
+  "version": 1,
+  "meta": {
+    "name": {
+      "en": "School",
+      "hu": "Iskola"
+    },
+    "description": {
+      "en": "Upcoming school events, this week’s canteen menu, countdown to the holidays and an interactive info menu.",
+      "hu": "Iskolai események, a heti menza, visszaszámlálás a szünetig és interaktív információs menü."
+    },
+    "category": "education",
+    "author": "Narancs Signage",
+    "license": "CC0-1.0",
+    "preview": "s3",
+    "icon": "🎓",
+    "languages": [
+      "en",
+      "hu"
+    ]
+  },
+  "forms": [],
+  "calendars": [
+    {
+      "ref": "c1",
+      "name": {
+        "en": "School events",
+        "hu": "Iskolai események"
+      },
+      "color": "var(--accent)",
+      "events": [
+        {
+          "title": {
+            "en": "Parents’ evening",
+            "hu": "Szülői értekezlet"
+          },
+          "location": {
+            "en": "Assembly hall",
+            "hu": "Díszterem"
+          },
+          "day": 3,
+          "start": "17:00",
+          "end": "19:00"
+        },
+        {
+          "title": {
+            "en": "Sports day",
+            "hu": "Sportnap"
+          },
+          "location": {
+            "en": "Sports field",
+            "hu": "Sportpálya"
+          },
+          "day": 8,
+          "all_day": true
+        },
+        {
+          "title": {
+            "en": "Science fair",
+            "hu": "Tudományos vásár"
+          },
+          "location": {
+            "en": "Library",
+            "hu": "Könyvtár"
+          },
+          "day": 12,
+          "start": "10:00",
+          "end": "14:00"
+        },
+        {
+          "title": {
+            "en": "School trip – 7th grade",
+            "hu": "Osztálykirándulás – 7. évfolyam"
+          },
+          "location": {
+            "en": "Lake Balaton",
+            "hu": "Balaton"
+          },
+          "day": 20,
+          "all_day": true
+        }
+      ]
+    }
+  ],
+  "media": [],
+  "slides": [
+    {
+      "ref": "s1",
+      "name": {
+        "en": "Announcement",
+        "hu": "Közlemény"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "left",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "kicker": {
+          "en": "Announcement",
+          "hu": "Közlemény"
+        },
+        "title": {
+          "en": "Parents’ evening on Thursday",
+          "hu": "Szülői értekezlet csütörtökön"
+        },
+        "body": {
+          "en": "17:00 in the assembly hall. Class teachers will be available afterwards in their classrooms.",
+          "hu": "17:00-kor a díszteremben, utána az osztályfőnökök a tantermekben várják a szülőket."
+        }
+      }
+    },
+    {
+      "ref": "s2",
+      "name": {
+        "en": "School events",
+        "hu": "Iskolai események"
+      },
+      "type": "calendar",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Upcoming events",
+          "hu": "Közelgő események"
+        },
+        "calendar_ids": [
+          "c1"
+        ],
+        "view": "list",
+        "days_ahead": 30,
+        "max_items": 7
+      }
+    },
+    {
+      "ref": "s3",
+      "name": {
+        "en": "Canteen menu",
+        "hu": "Heti menza"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "This week in the canteen",
+          "hu": "Heti menza"
+        },
+        "subtitle": "",
+        "columns": 3,
+        "cards": [
+          {
+            "icon": "🥕",
+            "title": {
+              "en": "Monday",
+              "hu": "Hétfő"
+            },
+            "text": {
+              "en": "Vegetable soup, chicken with rice",
+              "hu": "Zöldségleves, rizses hús"
+            }
+          },
+          {
+            "icon": "🍝",
+            "title": {
+              "en": "Tuesday",
+              "hu": "Kedd"
+            },
+            "text": {
+              "en": "Tomato soup, spaghetti bolognese",
+              "hu": "Paradicsomleves, bolognai spagetti"
+            }
+          },
+          {
+            "icon": "🐟",
+            "title": {
+              "en": "Wednesday",
+              "hu": "Szerda"
+            },
+            "text": {
+              "en": "Fish soup, potato salad",
+              "hu": "Halászlé, krumplisaláta"
+            }
+          },
+          {
+            "icon": "🍗",
+            "title": {
+              "en": "Thursday",
+              "hu": "Csütörtök"
+            },
+            "text": {
+              "en": "Chicken soup, schnitzel with mash",
+              "hu": "Húsleves, rántott hús pürével"
+            }
+          },
+          {
+            "icon": "🥞",
+            "title": {
+              "en": "Friday",
+              "hu": "Péntek"
+            },
+            "text": {
+              "en": "Bean soup, pancakes",
+              "hu": "Bableves, palacsinta"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s4",
+      "name": {
+        "en": "Holiday countdown",
+        "hu": "Visszaszámlálás"
+      },
+      "type": "countdown",
+      "duration": 10,
+      "data": {
+        "title": {
+          "en": "Until the holidays",
+          "hu": "A szünetig"
+        },
+        "target": "{{date+40}}T13:00",
+        "done_text": {
+          "en": "Happy holidays! ☀️",
+          "hu": "Jó pihenést! ☀️"
+        },
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))"
+      }
+    },
+    {
+      "ref": "s5",
+      "name": {
+        "en": "Info menu",
+        "hu": "Információs menü"
+      },
+      "type": "menu",
+      "duration": 30,
+      "data": {
+        "title": {
+          "en": "What are you looking for?",
+          "hu": "Mit keresel?"
+        },
+        "subtitle": {
+          "en": "Tap a button",
+          "hu": "Érints meg egy gombot"
+        },
+        "columns": 3,
+        "buttons": [
+          {
+            "icon": "📅",
+            "label": {
+              "en": "Events",
+              "hu": "Események"
+            },
+            "sub": {
+              "en": "Trips, meetings, competitions",
+              "hu": "Kirándulás, értekezlet, verseny"
+            },
+            "target_slide": "s2"
+          },
+          {
+            "icon": "🍽️",
+            "label": {
+              "en": "Canteen",
+              "hu": "Menza"
+            },
+            "sub": {
+              "en": "This week’s menu",
+              "hu": "Heti menü"
+            },
+            "target_slide": "s3"
+          },
+          {
+            "icon": "📢",
+            "label": {
+              "en": "News",
+              "hu": "Hírek"
+            },
+            "sub": {
+              "en": "Latest announcement",
+              "hu": "Legfrissebb közlemény"
+            },
+            "target_slide": "s1"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s6",
+      "name": {
+        "en": "Clock & weather",
+        "hu": "Óra és időjárás"
+      },
+      "type": "clock",
+      "duration": 10,
+      "data": {
+        "style": "digital",
+        "show_seconds": false,
+        "show_date": true,
+        "show_weather": true,
+        "show_forecast": true,
+        "title": {
+          "en": "Have a good day at school!",
+          "hu": "Jó tanulást!"
+        }
+      }
+    }
+  ],
+  "playlist": {
+    "name": {
+      "en": "School",
+      "hu": "Iskola"
+    },
+    "transition": "fade",
+    "items": [
+      {
+        "slide": "s1",
+        "duration": null
+      },
+      {
+        "slide": "s2",
+        "duration": null
+      },
+      {
+        "slide": "s3",
+        "duration": null
+      },
+      {
+        "slide": "s4",
+        "duration": null
+      },
+      {
+        "slide": "s5",
+        "duration": null
+      },
+      {
+        "slide": "s6",
+        "duration": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+name: Submit a template / Sablon beküldése
+description: Share a Narancs Signage template with everyone. / Ossz meg egy sablont mindenkivel.
+title: "Template: "
+labels: ["template-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **EN:** Export your content or playlist in the admin panel (**Export → Submit to the gallery**), then drag the downloaded `.narancs.json` file into the *Template file* box below. A bot checks it and opens a pull request; after review it appears in every Narancs Signage admin panel under **Templates → Community gallery**.
+
+        **HU:** Exportáld a tartalmat vagy listát az admin felületen (**Exportálás → Beküldés a galériába**), majd húzd a letöltött `.narancs.json` fájlt a lenti *Template file* mezőbe. Egy robot ellenőrzi és pull requestet nyit; jóváhagyás után minden Narancs Signage admin felületen megjelenik a **Sablonok → Közösségi galéria** alatt.
+  - type: input
+    id: name
+    attributes:
+      label: Template name
+      description: Name / Név
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is it for, what does it contain? / Mire való, mi van benne?
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Food & drink / Vendéglátás
+        - Office / Iroda
+        - Retail / Kereskedelem
+        - Health & beauty / Egészség, szépség
+        - Education / Oktatás
+        - Hotels / Szálláshely
+        - Sport
+        - Events / Rendezvény
+        - Other / Egyéb
+    validations:
+      required: true
+  - type: checkboxes
+    id: languages
+    attributes:
+      label: Languages
+      description: Which languages are the texts in? / Milyen nyelvűek a szövegek?
+      options:
+        - label: English
+        - label: Magyar
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      description: Name shown in the gallery (optional) / A galériában megjelenő név (opcionális)
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      description: CC0 = anyone may use it freely; CC BY = with attribution. / CC0 = bárki szabadon használhatja; CC BY = névfeltüntetéssel.
+      options:
+        - CC0-1.0
+        - CC-BY-4.0
+    validations:
+      required: true
+  - type: textarea
+    id: file
+    attributes:
+      label: Template file
+      description: Drag the .narancs.json file here (or paste its content). / Húzd ide a .narancs.json fájlt (vagy illeszd be a tartalmát).
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have the right to share everything in this template (texts, images) under the chosen license, and it contains no personal data. / Jogom van mindent megosztani a sablonban (szöveg, kép) a választott licenccel, és nincs benne személyes adat.
+          required: true

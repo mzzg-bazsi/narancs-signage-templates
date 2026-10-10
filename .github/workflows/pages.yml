@@ -1,0 +1,42 @@
+# Galéria közzététele: minden sablon ellenőrzése a Narancs Signage ellenőrzőjével, index.json, GitHub Pages.
+# Pull requestnél csak ellenőriz (a beküldések itt buknak el, ha hibásak).
+name: Gallery
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: mzzg-bazsi/narancs-signage
+          path: app
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node --disable-warning=ExperimentalWarning tools/build-index.mjs app _site
+      - if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

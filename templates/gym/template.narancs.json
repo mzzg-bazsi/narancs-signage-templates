@@ -1,0 +1,308 @@
+{
+  "format": "narancs-template",
+  "version": 1,
+  "meta": {
+    "name": {
+      "en": "Gym & fitness",
+      "hu": "Edzőterem"
+    },
+    "description": {
+      "en": "Weekly class schedule (recurring), memberships, a monthly challenge with countdown and the member app.",
+      "hu": "Heti órarend ismétlődő órákkal, bérletek, havi kihívás visszaszámlálóval és tagsági app."
+    },
+    "category": "sport",
+    "author": "Narancs Signage",
+    "license": "CC0-1.0",
+    "preview": "s2",
+    "icon": "💪",
+    "languages": [
+      "en",
+      "hu"
+    ]
+  },
+  "forms": [],
+  "calendars": [
+    {
+      "ref": "c1",
+      "name": {
+        "en": "Classes",
+        "hu": "Órák"
+      },
+      "color": "var(--accent)",
+      "events": [
+        {
+          "title": {
+            "en": "Yoga",
+            "hu": "Jóga"
+          },
+          "location": {
+            "en": "Studio 1",
+            "hu": "1-es terem"
+          },
+          "day": 0,
+          "start": "18:00",
+          "end": "19:00",
+          "rrule": "FREQ=WEEKLY"
+        },
+        {
+          "title": "Spinning",
+          "location": {
+            "en": "Bike room",
+            "hu": "Bicikliterem"
+          },
+          "day": 1,
+          "start": "07:00",
+          "end": "07:45",
+          "rrule": "FREQ=WEEKLY"
+        },
+        {
+          "title": "HIIT",
+          "location": {
+            "en": "Studio 2",
+            "hu": "2-es terem"
+          },
+          "day": 2,
+          "start": "18:30",
+          "end": "19:15",
+          "rrule": "FREQ=WEEKLY"
+        },
+        {
+          "title": "Pilates",
+          "location": {
+            "en": "Studio 1",
+            "hu": "1-es terem"
+          },
+          "day": 3,
+          "start": "09:00",
+          "end": "10:00",
+          "rrule": "FREQ=WEEKLY"
+        },
+        {
+          "title": {
+            "en": "Boxing",
+            "hu": "Box"
+          },
+          "location": {
+            "en": "Ring",
+            "hu": "Ring"
+          },
+          "day": 4,
+          "start": "19:00",
+          "end": "20:00",
+          "rrule": "FREQ=WEEKLY"
+        }
+      ]
+    }
+  ],
+  "media": [],
+  "slides": [
+    {
+      "ref": "s1",
+      "name": {
+        "en": "Motivation",
+        "hu": "Motiváció"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "center",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 120,
+        "kicker": {
+          "en": "Today",
+          "hu": "Ma"
+        },
+        "title": {
+          "en": "Stronger than yesterday 💪",
+          "hu": "Erősebb, mint tegnap 💪"
+        },
+        "body": {
+          "en": "Remember to warm up and drink enough water.",
+          "hu": "Ne felejts el bemelegíteni és eleget inni."
+        }
+      }
+    },
+    {
+      "ref": "s2",
+      "name": {
+        "en": "Class schedule",
+        "hu": "Órarend"
+      },
+      "type": "calendar",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "This week’s classes",
+          "hu": "Heti órarend"
+        },
+        "calendar_ids": [
+          "c1"
+        ],
+        "view": "week",
+        "days_ahead": 7,
+        "max_items": 7
+      }
+    },
+    {
+      "ref": "s3",
+      "name": {
+        "en": "Memberships",
+        "hu": "Bérletek"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Memberships",
+          "hu": "Bérletek"
+        },
+        "subtitle": {
+          "en": "Ask at the reception",
+          "hu": "Érdeklődj a recepción"
+        },
+        "columns": 3,
+        "cards": [
+          {
+            "icon": "🎟️",
+            "title": {
+              "en": "Day pass",
+              "hu": "Napijegy"
+            },
+            "text": {
+              "en": "Gym + classes",
+              "hu": "Terem + órák"
+            },
+            "badge": {
+              "en": "€12",
+              "hu": "3 500 Ft"
+            }
+          },
+          {
+            "icon": "📆",
+            "title": {
+              "en": "Monthly",
+              "hu": "Havi bérlet"
+            },
+            "text": {
+              "en": "Unlimited entry",
+              "hu": "Korlátlan belépés"
+            },
+            "badge": {
+              "en": "€49",
+              "hu": "14 900 Ft"
+            }
+          },
+          {
+            "icon": "🏆",
+            "title": {
+              "en": "Annual",
+              "hu": "Éves bérlet"
+            },
+            "text": {
+              "en": "2 months free",
+              "hu": "2 hónap ajándék"
+            },
+            "badge": {
+              "en": "€490",
+              "hu": "149 000 Ft"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s4",
+      "name": {
+        "en": "Monthly challenge",
+        "hu": "Havi kihívás"
+      },
+      "type": "countdown",
+      "duration": 10,
+      "data": {
+        "title": {
+          "en": "The 30-day challenge ends in",
+          "hu": "A 30 napos kihívás végéig"
+        },
+        "target": "{{date+30}}T20:00",
+        "done_text": {
+          "en": "Well done, everyone! 🏅",
+          "hu": "Gratulálunk mindenkinek! 🏅"
+        },
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))"
+      }
+    },
+    {
+      "ref": "s5",
+      "name": {
+        "en": "Member app",
+        "hu": "Tagsági app"
+      },
+      "type": "qr",
+      "duration": 12,
+      "data": {
+        "url": "https://example.com/app",
+        "title": {
+          "en": "Book classes in the app",
+          "hu": "Foglalj órát az appban"
+        },
+        "text": {
+          "en": "Scan to download",
+          "hu": "Olvasd be a letöltéshez"
+        }
+      }
+    },
+    {
+      "ref": "s6",
+      "name": {
+        "en": "Clock & weather",
+        "hu": "Óra és időjárás"
+      },
+      "type": "clock",
+      "duration": 10,
+      "data": {
+        "style": "digital",
+        "show_seconds": false,
+        "show_date": true,
+        "show_weather": true,
+        "show_forecast": true,
+        "title": {
+          "en": "Train hard!",
+          "hu": "Jó edzést!"
+        }
+      }
+    }
+  ],
+  "playlist": {
+    "name": {
+      "en": "Gym",
+      "hu": "Edzőterem"
+    },
+    "transition": "fade",
+    "items": [
+      {
+        "slide": "s1",
+        "duration": null
+      },
+      {
+        "slide": "s2",
+        "duration": null
+      },
+      {
+        "slide": "s3",
+        "duration": null
+      },
+      {
+        "slide": "s4",
+        "duration": null
+      },
+      {
+        "slide": "s5",
+        "duration": null
+      },
+      {
+        "slide": "s6",
+        "duration": null
+      }
+    ]
+  }
+}

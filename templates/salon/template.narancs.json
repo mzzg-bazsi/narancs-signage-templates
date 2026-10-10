@@ -1,0 +1,319 @@
+{
+  "format": "narancs-template",
+  "version": 1,
+  "meta": {
+    "name": {
+      "en": "Salon & beauty",
+      "hu": "Szépségszalon"
+    },
+    "description": {
+      "en": "Services with prices, this month’s offer, opening hours, online booking and a feedback form.",
+      "hu": "Szolgáltatások árakkal, havi ajánlat, nyitvatartás, online foglalás és visszajelzés."
+    },
+    "category": "health",
+    "author": "Narancs Signage",
+    "license": "CC0-1.0",
+    "preview": "s2",
+    "icon": "💇",
+    "languages": [
+      "en",
+      "hu"
+    ]
+  },
+  "forms": [
+    {
+      "ref": "f1",
+      "name": {
+        "en": "Feedback",
+        "hu": "Visszajelzés"
+      },
+      "title": {
+        "en": "How was your visit?",
+        "hu": "Milyen volt nálunk?"
+      },
+      "intro": {
+        "en": "Your opinion helps us improve. Thank you!",
+        "hu": "Véleményed segít nekünk fejlődni. Köszönjük!"
+      },
+      "submit_text": {
+        "en": "Send",
+        "hu": "Küldés"
+      },
+      "thanks_text": {
+        "en": "Thank you for your feedback! 🧡",
+        "hu": "Köszönjük a visszajelzést! 🧡"
+      },
+      "fields": [
+        {
+          "type": "smiley",
+          "label": {
+            "en": "Overall",
+            "hu": "Összességében"
+          },
+          "required": true
+        },
+        {
+          "type": "rating",
+          "label": {
+            "en": "Service",
+            "hu": "Kiszolgálás"
+          }
+        },
+        {
+          "type": "textarea",
+          "label": {
+            "en": "Anything we could do better?",
+            "hu": "Min javíthatnánk?"
+          }
+        }
+      ]
+    }
+  ],
+  "calendars": [],
+  "media": [],
+  "slides": [
+    {
+      "ref": "s1",
+      "name": {
+        "en": "Welcome",
+        "hu": "Üdvözlés"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "left",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "kicker": {
+          "en": "Welcome to",
+          "hu": "Üdvözlünk!"
+        },
+        "title": "{{org_name}}",
+        "body": {
+          "en": "Relax, we will be with you in a moment. Coffee or tea?",
+          "hu": "Helyezkedj el kényelmesen, mindjárt jövünk. Kávét vagy teát?"
+        },
+        "show_logo": true
+      }
+    },
+    {
+      "ref": "s2",
+      "name": {
+        "en": "Services",
+        "hu": "Szolgáltatások"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Services",
+          "hu": "Szolgáltatásaink"
+        },
+        "subtitle": {
+          "en": "Prices from",
+          "hu": "Árak -tól"
+        },
+        "columns": 2,
+        "cards": [
+          {
+            "icon": "✂️",
+            "title": {
+              "en": "Haircut",
+              "hu": "Hajvágás"
+            },
+            "text": {
+              "en": "Wash, cut and styling",
+              "hu": "Mosás, vágás, szárítás"
+            },
+            "badge": {
+              "en": "€35",
+              "hu": "8 900 Ft"
+            }
+          },
+          {
+            "icon": "🎨",
+            "title": {
+              "en": "Colouring",
+              "hu": "Festés"
+            },
+            "text": {
+              "en": "Full colour or highlights",
+              "hu": "Teljes festés vagy melír"
+            },
+            "badge": {
+              "en": "€65",
+              "hu": "16 900 Ft"
+            }
+          },
+          {
+            "icon": "💅",
+            "title": {
+              "en": "Manicure",
+              "hu": "Manikűr"
+            },
+            "text": {
+              "en": "Gel polish included",
+              "hu": "Géllakkal"
+            },
+            "badge": {
+              "en": "€30",
+              "hu": "7 500 Ft"
+            }
+          },
+          {
+            "icon": "💆",
+            "title": {
+              "en": "Facial",
+              "hu": "Arckezelés"
+            },
+            "text": {
+              "en": "Cleansing and mask, 60 min",
+              "hu": "Tisztítás és pakolás, 60 perc"
+            },
+            "badge": {
+              "en": "€55",
+              "hu": "13 900 Ft"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s3",
+      "name": {
+        "en": "Offer of the month",
+        "hu": "Havi ajánlat"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "center",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "kicker": {
+          "en": "Offer of the month",
+          "hu": "A hónap ajánlata"
+        },
+        "title": {
+          "en": "Haircut + treatment −15%",
+          "hu": "Hajvágás + hajpakolás −15%"
+        },
+        "body": {
+          "en": "Book this month and mention the offer.",
+          "hu": "Foglalj ebben a hónapban, és említsd az ajánlatot."
+        }
+      }
+    },
+    {
+      "ref": "s4",
+      "name": {
+        "en": "Opening hours",
+        "hu": "Nyitvatartás"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Opening hours",
+          "hu": "Nyitvatartás"
+        },
+        "subtitle": "",
+        "columns": 3,
+        "cards": [
+          {
+            "icon": "📅",
+            "title": {
+              "en": "Tuesday – Friday",
+              "hu": "Kedd – péntek"
+            },
+            "text": "09:00 – 19:00"
+          },
+          {
+            "icon": "🌤️",
+            "title": {
+              "en": "Saturday",
+              "hu": "Szombat"
+            },
+            "text": "09:00 – 14:00"
+          },
+          {
+            "icon": "🚫",
+            "title": {
+              "en": "Sunday – Monday",
+              "hu": "Vasárnap – hétfő"
+            },
+            "text": {
+              "en": "Closed",
+              "hu": "Zárva"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s5",
+      "name": {
+        "en": "Online booking",
+        "hu": "Online foglalás"
+      },
+      "type": "qr",
+      "duration": 12,
+      "data": {
+        "url": "https://example.com/booking",
+        "title": {
+          "en": "Book your next visit",
+          "hu": "Foglald le a következő időpontod"
+        },
+        "text": {
+          "en": "Scan the code with your phone",
+          "hu": "Olvasd be a kódot a telefonoddal"
+        }
+      }
+    },
+    {
+      "ref": "s6",
+      "name": {
+        "en": "Feedback form",
+        "hu": "Visszajelzés űrlap"
+      },
+      "type": "form",
+      "duration": 45,
+      "data": {
+        "form_id": "f1"
+      }
+    }
+  ],
+  "playlist": {
+    "name": {
+      "en": "Salon",
+      "hu": "Szalon"
+    },
+    "transition": "fade",
+    "items": [
+      {
+        "slide": "s1",
+        "duration": null
+      },
+      {
+        "slide": "s2",
+        "duration": null
+      },
+      {
+        "slide": "s3",
+        "duration": null
+      },
+      {
+        "slide": "s4",
+        "duration": null
+      },
+      {
+        "slide": "s5",
+        "duration": null
+      },
+      {
+        "slide": "s6",
+        "duration": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "format": "narancs-template",
+  "version": 1,
+  "meta": {
+    "name": {
+      "en": "Medical practice",
+      "hu": "Orvosi rendelő"
+    },
+    "description": {
+      "en": "Welcome, doctors on duty, opening hours, patient information and online booking QR code.",
+      "hu": "Üdvözlés, rendelő orvosok, rendelési idő, betegtájékoztató és online időpontfoglalás QR kóddal."
+    },
+    "category": "health",
+    "author": "Narancs Signage",
+    "license": "CC0-1.0",
+    "preview": "s2",
+    "icon": "🩺",
+    "languages": [
+      "en",
+      "hu"
+    ]
+  },
+  "forms": [],
+  "calendars": [],
+  "media": [],
+  "slides": [
+    {
+      "ref": "s1",
+      "name": {
+        "en": "Welcome",
+        "hu": "Üdvözlés"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "left",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "kicker": {
+          "en": "Welcome to",
+          "hu": "Üdvözöljük!"
+        },
+        "title": "{{org_name}}",
+        "body": {
+          "en": "Please take a seat. You will be called in by name.",
+          "hu": "Kérjük, foglaljon helyet, név szerint szólítjuk."
+        },
+        "show_logo": true
+      }
+    },
+    {
+      "ref": "s2",
+      "name": {
+        "en": "Doctors today",
+        "hu": "Mai rendelés"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Doctors today",
+          "hu": "Ma rendel"
+        },
+        "subtitle": "",
+        "columns": 3,
+        "cards": [
+          {
+            "icon": "👩‍⚕️",
+            "title": "Dr. Anna Kovács",
+            "text": {
+              "en": "General practitioner · Room 1 · 08:00–12:00",
+              "hu": "Háziorvos · 1-es rendelő · 08:00–12:00"
+            }
+          },
+          {
+            "icon": "👨‍⚕️",
+            "title": "Dr. Péter Szabó",
+            "text": {
+              "en": "Paediatrician · Room 2 · 13:00–17:00",
+              "hu": "Gyermekorvos · 2-es rendelő · 13:00–17:00"
+            }
+          },
+          {
+            "icon": "🦷",
+            "title": "Dr. Eszter Nagy",
+            "text": {
+              "en": "Dentist · Room 3 · 09:00–15:00",
+              "hu": "Fogorvos · 3-as rendelő · 09:00–15:00"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s3",
+      "name": {
+        "en": "Opening hours",
+        "hu": "Rendelési idő"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Opening hours",
+          "hu": "Rendelési idő"
+        },
+        "subtitle": {
+          "en": "Emergency: call 112",
+          "hu": "Sürgős esetben hívja a 112-t"
+        },
+        "columns": 3,
+        "cards": [
+          {
+            "icon": "📅",
+            "title": {
+              "en": "Monday – Thursday",
+              "hu": "Hétfő – csütörtök"
+            },
+            "text": "08:00 – 18:00"
+          },
+          {
+            "icon": "📅",
+            "title": {
+              "en": "Friday",
+              "hu": "Péntek"
+            },
+            "text": "08:00 – 14:00"
+          },
+          {
+            "icon": "🚫",
+            "title": {
+              "en": "Weekend",
+              "hu": "Hétvége"
+            },
+            "text": {
+              "en": "Closed",
+              "hu": "Zárva"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s4",
+      "name": {
+        "en": "Patient information",
+        "hu": "Betegtájékoztató"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "left",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "kicker": {
+          "en": "Please note",
+          "hu": "Tájékoztatás"
+        },
+        "title": {
+          "en": "Have your ID and insurance card ready",
+          "hu": "Kérjük, készítse elő személyi igazolványát és TAJ kártyáját"
+        },
+        "body": {
+          "en": "If you have a fever or cough, please tell the assistant when you arrive.",
+          "hu": "Ha lázas vagy köhög, kérjük, érkezéskor jelezze az asszisztensnek."
+        }
+      }
+    },
+    {
+      "ref": "s5",
+      "name": {
+        "en": "Online booking",
+        "hu": "Online időpontfoglalás"
+      },
+      "type": "qr",
+      "duration": 12,
+      "data": {
+        "url": "https://example.com/booking",
+        "title": {
+          "en": "Book your next appointment",
+          "hu": "Foglalja le következő időpontját"
+        },
+        "text": {
+          "en": "Scan the code with your phone",
+          "hu": "Olvassa be a kódot a telefonjával"
+        }
+      }
+    },
+    {
+      "ref": "s6",
+      "name": {
+        "en": "Clock & weather",
+        "hu": "Óra és időjárás"
+      },
+      "type": "clock",
+      "duration": 10,
+      "data": {
+        "style": "digital",
+        "show_seconds": false,
+        "show_date": true,
+        "show_weather": true,
+        "show_forecast": true,
+        "title": {
+          "en": "Get well soon!",
+          "hu": "Jobbulást kívánunk!"
+        }
+      }
+    }
+  ],
+  "playlist": {
+    "name": {
+      "en": "Medical practice",
+      "hu": "Rendelő"
+    },
+    "transition": "fade",
+    "items": [
+      {
+        "slide": "s1",
+        "duration": null
+      },
+      {
+        "slide": "s2",
+        "duration": null
+      },
+      {
+        "slide": "s3",
+        "duration": null
+      },
+      {
+        "slide": "s4",
+        "duration": null
+      },
+      {
+        "slide": "s5",
+        "duration": null
+      },
+      {
+        "slide": "s6",
+        "duration": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "format": "narancs-template",
+  "version": 1,
+  "meta": {
+    "name": {
+      "en": "Office lobby",
+      "hu": "Irodai előtér"
+    },
+    "description": {
+      "en": "Visitor welcome, today’s meetings with the clock, touch check-in for guests, Wi-Fi and company news.",
+      "hu": "Vendégfogadás, mai megbeszélések órával, érintős vendégregisztráció, Wi-Fi és céges hírek."
+    },
+    "category": "office",
+    "author": "Narancs Signage",
+    "license": "CC0-1.0",
+    "preview": "s4",
+    "icon": "🏢",
+    "languages": [
+      "en",
+      "hu"
+    ]
+  },
+  "forms": [
+    {
+      "ref": "f1",
+      "name": {
+        "en": "Visitor check-in",
+        "hu": "Vendégregisztráció"
+      },
+      "title": {
+        "en": "Welcome! Please check in",
+        "hu": "Üdvözöljük! Kérjük, regisztráljon"
+      },
+      "intro": {
+        "en": "We will let your host know you have arrived.",
+        "hu": "Értesítjük, akihez érkezett."
+      },
+      "submit_text": {
+        "en": "Check in",
+        "hu": "Bejelentkezés"
+      },
+      "thanks_text": {
+        "en": "Thank you! Your host has been notified. 👋",
+        "hu": "Köszönjük! Értesítettük, akihez érkezett. 👋"
+      },
+      "fields": [
+        {
+          "type": "text",
+          "label": {
+            "en": "Your name",
+            "hu": "Név"
+          },
+          "required": true
+        },
+        {
+          "type": "text",
+          "label": {
+            "en": "Company",
+            "hu": "Cég"
+          }
+        },
+        {
+          "type": "text",
+          "label": {
+            "en": "Visiting",
+            "hu": "Kihez érkezett?"
+          },
+          "required": true
+        },
+        {
+          "type": "checkbox",
+          "label": {
+            "en": "I accept the visitor rules and privacy notice",
+            "hu": "Elfogadom a látogatói szabályzatot és az adatkezelési tájékoztatót"
+          },
+          "required": true
+        }
+      ]
+    }
+  ],
+  "calendars": [
+    {
+      "ref": "c1",
+      "name": {
+        "en": "Meeting rooms",
+        "hu": "Tárgyalók"
+      },
+      "color": "var(--accent)",
+      "events": [
+        {
+          "title": {
+            "en": "Weekly team meeting",
+            "hu": "Heti csapatmegbeszélés"
+          },
+          "location": {
+            "en": "Room 1",
+            "hu": "Tárgyaló 1"
+          },
+          "day": 0,
+          "start": "09:30",
+          "end": "10:30",
+          "rrule": "FREQ=WEEKLY"
+        },
+        {
+          "title": {
+            "en": "Client presentation",
+            "hu": "Ügyfélprezentáció"
+          },
+          "location": {
+            "en": "Room 2",
+            "hu": "Tárgyaló 2"
+          },
+          "day": 0,
+          "start": "14:00",
+          "end": "15:00"
+        },
+        {
+          "title": {
+            "en": "Budget review",
+            "hu": "Költségvetési egyeztetés"
+          },
+          "location": {
+            "en": "Board room",
+            "hu": "Nagytárgyaló"
+          },
+          "day": 1,
+          "start": "11:00",
+          "end": "12:00"
+        },
+        {
+          "title": {
+            "en": "Company breakfast",
+            "hu": "Céges reggeli"
+          },
+          "location": {
+            "en": "Kitchen",
+            "hu": "Konyha"
+          },
+          "day": 3,
+          "start": "08:30",
+          "end": "09:30"
+        }
+      ]
+    }
+  ],
+  "media": [],
+  "slides": [
+    {
+      "ref": "s1",
+      "name": {
+        "en": "Welcome visitors",
+        "hu": "Vendégek üdvözlése"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "left",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "kicker": {
+          "en": "Welcome",
+          "hu": "Üdvözöljük"
+        },
+        "title": "{{org_name}}",
+        "body": {
+          "en": "Please check in at the reception or on this screen. Your host will be notified.",
+          "hu": "Kérjük, jelentkezzen a recepción vagy ezen a képernyőn. Értesítjük, akihez érkezett."
+        },
+        "show_logo": true
+      }
+    },
+    {
+      "ref": "s2",
+      "name": {
+        "en": "Today’s meetings",
+        "hu": "Mai megbeszélések"
+      },
+      "type": "calendar",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Meetings",
+          "hu": "Megbeszélések"
+        },
+        "calendar_ids": [
+          "c1"
+        ],
+        "view": "list",
+        "days_ahead": 7,
+        "max_items": 7
+      }
+    },
+    {
+      "ref": "s3",
+      "name": {
+        "en": "Clock & weather",
+        "hu": "Óra és időjárás"
+      },
+      "type": "clock",
+      "duration": 10,
+      "data": {
+        "style": "digital",
+        "show_seconds": false,
+        "show_date": true,
+        "show_weather": true,
+        "show_forecast": true,
+        "title": {
+          "en": "Have a great day!",
+          "hu": "Szép napot!"
+        }
+      }
+    },
+    {
+      "ref": "s4",
+      "name": {
+        "en": "Meetings with the clock",
+        "hu": "Megbeszélések órával"
+      },
+      "type": "zones",
+      "duration": 30,
+      "data": {
+        "layout": "right",
+        "size": 32,
+        "gap": true,
+        "zones": [
+          {
+            "transition": "fade",
+            "items": [
+              {
+                "slide_id": "s2"
+              }
+            ]
+          },
+          {
+            "transition": "fade",
+            "items": [
+              {
+                "slide_id": "s3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s5",
+      "name": {
+        "en": "Visitor check-in",
+        "hu": "Vendégregisztráció"
+      },
+      "type": "form",
+      "duration": 45,
+      "data": {
+        "form_id": "f1"
+      }
+    },
+    {
+      "ref": "s6",
+      "name": {
+        "en": "Guest Wi-Fi",
+        "hu": "Vendég Wi-Fi"
+      },
+      "type": "qr",
+      "duration": 12,
+      "data": {
+        "url": "WIFI:T:WPA;S:{{org_name}} Guest;P:change-me;;",
+        "title": {
+          "en": "Free Wi-Fi",
+          "hu": "Ingyenes Wi-Fi"
+        },
+        "text": {
+          "en": "Scan with your phone camera to connect",
+          "hu": "Olvasd be a telefonod kamerájával a csatlakozáshoz"
+        }
+      }
+    },
+    {
+      "ref": "s7",
+      "name": {
+        "en": "Visitor menu",
+        "hu": "Vendég menü"
+      },
+      "type": "menu",
+      "duration": 30,
+      "data": {
+        "title": {
+          "en": "How can we help?",
+          "hu": "Miben segíthetünk?"
+        },
+        "subtitle": {
+          "en": "Tap a topic",
+          "hu": "Érintsen meg egy témát"
+        },
+        "columns": 3,
+        "buttons": [
+          {
+            "icon": "✍️",
+            "label": {
+              "en": "Check in",
+              "hu": "Bejelentkezés"
+            },
+            "sub": {
+              "en": "Let your host know you are here",
+              "hu": "Jelezze érkezését"
+            },
+            "target_slide": "s5"
+          },
+          {
+            "icon": "📅",
+            "label": {
+              "en": "Meetings",
+              "hu": "Megbeszélések"
+            },
+            "sub": {
+              "en": "Today and this week",
+              "hu": "Ma és ezen a héten"
+            },
+            "target_slide": "s2"
+          },
+          {
+            "icon": "📶",
+            "label": "Wi-Fi",
+            "sub": {
+              "en": "Guest network",
+              "hu": "Vendéghálózat"
+            },
+            "target_slide": "s6"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s8",
+      "name": {
+        "en": "Company news",
+        "hu": "Céges hírek"
+      },
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "left",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "kicker": {
+          "en": "News",
+          "hu": "Hírek"
+        },
+        "title": {
+          "en": "We are moving to the 3rd floor",
+          "hu": "Költözünk a 3. emeletre"
+        },
+        "body": {
+          "en": "From next Monday the sales team works on the 3rd floor. The meeting rooms keep their names.",
+          "hu": "Jövő hétfőtől az értékesítési csapat a 3. emeleten dolgozik. A tárgyalók neve nem változik."
+        }
+      }
+    }
+  ],
+  "playlist": {
+    "name": {
+      "en": "Office lobby",
+      "hu": "Irodai előtér"
+    },
+    "transition": "fade",
+    "items": [
+      {
+        "slide": "s1",
+        "duration": null
+      },
+      {
+        "slide": "s4",
+        "duration": null
+      },
+      {
+        "slide": "s7",
+        "duration": null
+      },
+      {
+        "slide": "s8",
+        "duration": null
+      },
+      {
+        "slide": "s6",
+        "duration": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "format": "narancs-template",
+  "version": 1,
+  "meta": {
+    "name": {
+      "en": "Bar & pub",
+      "hu": "Bár, söröző"
+    },
+    "description": {
+      "en": "Happy hour, drinks menu, weekly live music and quiz nights, countdown to the big match and a menu QR code.",
+      "hu": "Happy hour, itallap, heti élőzene és kvízest, visszaszámlálás a nagy meccsig és QR kódos étlap."
+    },
+    "category": "food",
+    "author": "Narancs Signage",
+    "license": "CC0-1.0",
+    "preview": "s2",
+    "icon": "🍹",
+    "languages": [
+      "en",
+      "hu"
+    ]
+  },
+  "forms": [],
+  "calendars": [
+    {
+      "ref": "c1",
+      "name": {
+        "en": "Bar events",
+        "hu": "Programok"
+      },
+      "color": "var(--accent)",
+      "events": [
+        {
+          "title": {
+            "en": "Quiz night",
+            "hu": "Kvízest"
+          },
+          "location": {
+            "en": "Main room",
+            "hu": "Nagyterem"
+          },
+          "day": 1,
+          "start": "20:00",
+          "end": "22:00",
+          "rrule": "FREQ=WEEKLY"
+        },
+        {
+          "title": {
+            "en": "Live music",
+            "hu": "Élőzene"
+          },
+          "location": {
+            "en": "Stage",
+            "hu": "Színpad"
+          },
+          "day": 3,
+          "start": "21:00",
+          "end": "23:30",
+          "rrule": "FREQ=WEEKLY"
+        },
+        {
+          "title": {
+            "en": "Big match on the big screen",
+            "hu": "Nagy meccs kivetítőn"
+          },
+          "location": {
+            "en": "Garden",
+            "hu": "Kert"
+          },
+          "day": 3,
+          "start": "20:45",
+          "end": "22:45"
+        }
+      ]
+    }
+  ],
+  "media": [],
+  "slides": [
+    {
+      "ref": "s1",
+      "name": "Happy hour",
+      "type": "text",
+      "duration": 10,
+      "data": {
+        "align": "center",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 125,
+        "kicker": "Happy hour",
+        "title": {
+          "en": "2 for 1 on cocktails",
+          "hu": "Koktélok 1+1 akcióban"
+        },
+        "body": {
+          "en": "Every weekday from 17:00 to 19:00.",
+          "hu": "Minden hétköznap 17:00 és 19:00 között."
+        }
+      }
+    },
+    {
+      "ref": "s2",
+      "name": {
+        "en": "Drinks menu",
+        "hu": "Itallap"
+      },
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Drinks",
+          "hu": "Italok"
+        },
+        "subtitle": "",
+        "columns": 2,
+        "cards": [
+          {
+            "icon": "🍺",
+            "title": {
+              "en": "Draught beer",
+              "hu": "Csapolt sör"
+            },
+            "text": "0.5 l",
+            "badge": {
+              "en": "€4.50",
+              "hu": "1 290 Ft"
+            }
+          },
+          {
+            "icon": "🍷",
+            "title": {
+              "en": "House wine",
+              "hu": "Házi bor"
+            },
+            "text": "1 dl",
+            "badge": {
+              "en": "€3.90",
+              "hu": "990 Ft"
+            }
+          },
+          {
+            "icon": "🍹",
+            "title": "Mojito",
+            "text": {
+              "en": "Rum, lime, mint",
+              "hu": "Rum, lime, menta"
+            },
+            "badge": {
+              "en": "€8.50",
+              "hu": "2 490 Ft"
+            }
+          },
+          {
+            "icon": "🥤",
+            "title": {
+              "en": "Lemonade",
+              "hu": "Limonádé"
+            },
+            "text": {
+              "en": "Homemade, 0.4 l",
+              "hu": "Házi, 0,4 l"
+            },
+            "badge": {
+              "en": "€3.50",
+              "hu": "990 Ft"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s3",
+      "name": {
+        "en": "Events",
+        "hu": "Programok"
+      },
+      "type": "calendar",
+      "duration": 15,
+      "data": {
+        "title": {
+          "en": "Coming up",
+          "hu": "Programok"
+        },
+        "calendar_ids": [
+          "c1"
+        ],
+        "view": "list",
+        "days_ahead": 14,
+        "max_items": 7
+      }
+    },
+    {
+      "ref": "s4",
+      "name": {
+        "en": "Match countdown",
+        "hu": "Meccs visszaszámláló"
+      },
+      "type": "countdown",
+      "duration": 10,
+      "data": {
+        "title": {
+          "en": "Kick-off in",
+          "hu": "Kezdőrúgásig"
+        },
+        "target": "{{date+3}}T20:45",
+        "done_text": {
+          "en": "The match is on – enjoy! ⚽",
+          "hu": "Megy a meccs – szurkoljunk! ⚽"
+        },
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))"
+      }
+    },
+    {
+      "ref": "s5",
+      "name": {
+        "en": "Food menu",
+        "hu": "Étlap"
+      },
+      "type": "qr",
+      "duration": 12,
+      "data": {
+        "url": "https://example.com/menu",
+        "title": {
+          "en": "Hungry? See our food menu",
+          "hu": "Éhes vagy? Nézd meg az étlapot"
+        },
+        "text": {
+          "en": "Scan with your phone",
+          "hu": "Olvasd be a telefonoddal"
+        }
+      }
+    }
+  ],
+  "playlist": {
+    "name": {
+      "en": "Bar",
+      "hu": "Bár"
+    },
+    "transition": "fade",
+    "items": [
+      {
+        "slide": "s1",
+        "duration": null
+      },
+      {
+        "slide": "s2",
+        "duration": null
+      },
+      {
+        "slide": "s3",
+        "duration": null
+      },
+      {
+        "slide": "s4",
+        "duration": null
+      },
+      {
+        "slide": "s5",
+        "duration": null
+      }
+    ]
+  }
+}
