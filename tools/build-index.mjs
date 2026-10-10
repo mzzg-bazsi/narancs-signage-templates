@@ -59,7 +59,7 @@ if (errors.length) {
 }
 fs.mkdirSync(out, { recursive: true });
 fs.writeFileSync(path.join(out, 'index.json'), JSON.stringify({ version: 1, updated: new Date().toISOString(), templates }, null, 1));
-// a statikus galéria oldal + az osztott képernyő elrendezések a fő repóból
+// átirányítás a weboldal galéria oldalára + az osztott képernyő elrendezések a fő repóból (a weboldal galériája használja)
 for (const f of fs.readdirSync('site')) fs.copyFileSync(path.join('site', f), path.join(out, f));
 fs.copyFileSync(path.join(app, 'server/public/shared/zones.js'), path.join(out, 'zones.js'));
 console.log(`✔ ${templates.length} templates → ${path.relative(process.cwd(), out)}/index.json`);
