@@ -27,7 +27,8 @@ const CATS = { food: ['Food & drink', 'Vendéglátás'], office: ['Office', 'Iro
 const ACCENT = { food: '#f08a4b', office: '#6fa8e6', retail: '#ec6f95', health: '#4fc0a6', education: '#f2c14e', hospitality: '#b893f2', sport: '#86d46f', events: '#ff7d5c', other: '#e9a77d' };
 const TYPE_ICON = { image: '🖼️', video: '🎬', web: '🌐', rss: '📰', weather: '🌤️', youtube: '▶️', calendar: '📅', countdown: '⏳', menu: '👆', form: '✍️', qr: '🔳', clock: '🕒' };
 
-let lang = (() => { try { return localStorage.getItem('gallery.lang'); } catch { return null; } })() || (/^hu\b/i.test(navigator.language) ? 'hu' : 'en');
+const qLang = new URLSearchParams(location.search).get('lang');
+let lang = (['en', 'hu'].includes(qLang) && qLang) || (() => { try { return localStorage.getItem('gallery.lang'); } catch { return null; } })() || (/^hu\b/i.test(navigator.language) ? 'hu' : 'en');
 const t = (s, v = {}) => (UI[lang]?.[s] ?? s).replace(/\{(\w+)\}/g, (_, k) => v[k] ?? '');
 const loc = (v) => (v && typeof v === 'object' ? v[lang] ?? v.en ?? Object.values(v)[0] ?? '' : v ?? '');
 const fill = (s) => String(s).replace(/\{\{org_name\}\}/g, t('Your Business')).replace(/\{\{city\}\}/g, 'Budapest')
