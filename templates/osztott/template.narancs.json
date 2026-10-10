@@ -1,0 +1,151 @@
+{
+  "format": "narancs-template",
+  "version": 1,
+  "meta": {
+    "name": "Osztott",
+    "description": "Osztott teszt",
+    "category": "other",
+    "author": "mzzg-bazsi",
+    "license": "CC0-1.0",
+    "lang": "en",
+    "app_version": "1.17.1",
+    "created": "2026-10-10T15:44:42.769Z",
+    "languages": [
+      "hu"
+    ],
+    "submitted_by": "mzzg-bazsi"
+  },
+  "slides": [
+    {
+      "ref": "s1",
+      "name": "New split screen",
+      "type": "zones",
+      "duration": 30,
+      "data": {
+        "layout": "grid4",
+        "size": 30,
+        "gap": false,
+        "zones": [
+          {
+            "items": [
+              {
+                "slide_id": "s2"
+              }
+            ],
+            "transition": "fade"
+          },
+          {
+            "items": [
+              {
+                "slide_id": "s3"
+              }
+            ],
+            "transition": "fade"
+          },
+          {
+            "items": [
+              {
+                "slide_id": "s4"
+              }
+            ],
+            "transition": "fade"
+          },
+          {
+            "items": [
+              {
+                "slide_id": "s5"
+              }
+            ],
+            "transition": "fade"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s2",
+      "name": "Visszaszámlálás újévig",
+      "type": "countdown",
+      "duration": 10,
+      "data": {
+        "title": "Újévig",
+        "target": "2027-01-01T00:00",
+        "done_text": "Boldog új évet! 🎉",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))"
+      }
+    },
+    {
+      "ref": "s3",
+      "name": "Szolgáltatásaink",
+      "type": "cards",
+      "duration": 15,
+      "data": {
+        "title": "Szolgáltatásaink",
+        "subtitle": "Minden egy helyen",
+        "columns": 3,
+        "cards": [
+          {
+            "icon": "☕",
+            "title": "Kávézó",
+            "text": "Földszint, 7:00–18:00",
+            "badge": "ÚJ"
+          },
+          {
+            "icon": "📚",
+            "title": "Könyvtár",
+            "text": "2. emelet"
+          },
+          {
+            "icon": "🏋️",
+            "title": "Edzőterem",
+            "text": "-1. szint"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "s4",
+      "name": "Üdvözlő hirdetmény",
+      "type": "text",
+      "duration": 12,
+      "data": {
+        "kicker": "Üdvözlünk!",
+        "title": "Nari",
+        "body": "Ez egy minta tartalom. Az admin felület Tartalmak menüjében szerkesztheted vagy törölheted, a Lejátszási listák menüben pedig összeállíthatod, mi fusson a képernyőkön.",
+        "align": "left",
+        "bg": "linear-gradient(135deg, var(--bg2), var(--bg))",
+        "font_scale": 100,
+        "show_logo": true
+      }
+    },
+    {
+      "ref": "s5",
+      "name": "Óra és időjárás",
+      "type": "clock",
+      "duration": 10,
+      "data": {
+        "style": "digital",
+        "show_seconds": false,
+        "show_date": true,
+        "show_weather": true,
+        "show_forecast": true,
+        "title": "Szép napot!",
+        "city": "Budapest",
+        "lat": 47.4979,
+        "lon": 19.0402
+      }
+    }
+  ],
+  "playlist": {
+    "name": "Osztott",
+    "transition": "fade",
+    "items": [
+      {
+        "slide": "s1",
+        "duration": null
+      }
+    ]
+  },
+  "forms": [],
+  "calendars": [],
+  "media": []
+}
