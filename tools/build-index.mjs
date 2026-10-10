@@ -13,6 +13,19 @@ const { validateTemplate } = await import(pathToFileURL(path.join(app, 'server/s
 const CATEGORIES = ['food', 'office', 'retail', 'health', 'education', 'hospitality', 'sport', 'events', 'other'];
 const pick = (v) => (v && typeof v === 'object' ? v : String(v ?? '')); // kétnyelvű {en, hu} vagy szöveg
 const errors = [], templates = [];
+// a galéria oldal mini képernyőihez: a diák rövid kivonata (a teljes sablont így nem kell letölteni)
+const cut = (v, n = 160) => v == null || v === '' ? undefined : typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, String(x).slice(0, n)])) : String(v).slice(0, n);
+function screens(t) {
+  const forms = Object.fromEntries((t.forms || []).map((f) => [f.ref, f.name]));
+  return Object.fromEntries(t.slides.map((s) => {
+    const d = s.data || {};
+    return [s.ref, {
+      type: s.type, name: cut(s.name, 60), kicker: cut(d.kicker, 60), title: cut(d.title ?? forms[d.form_id], 90), body: cut(d.body ?? d.subtitle ?? d.text),
+      items: (d.cards || d.buttons || []).slice(0, 4).map((c) => ({ icon: String(c.icon || '').slice(0, 8), title: cut(c.title ?? c.label, 40) })),
+      zones: s.type === 'zones' ? (d.zones || []).map((z) => z.items?.[0]?.slide_id ?? null) : undefined, layout: d.layout, size: d.size,
+    }];
+  }));
+}
 fs.rmSync(out, { recursive: true, force: true });
 
 for (const id of fs.readdirSync('templates').sort()) {
@@ -31,6 +44,7 @@ for (const id of fs.readdirSync('templates').sort()) {
       languages, author: String(m.author || ''), license: String(m.license || 'CC0-1.0'), submitted_by: m.submitted_by || null,
       slides: t.slides.length, items: t.playlist?.items?.length || 0, forms: (t.forms || []).length, calendars: (t.calendars || []).length, media: (t.media || []).length,
       size: fs.statSync(file).size, created: m.created || null,
+      preview: m.preview || t.playlist?.items?.[0]?.slide || t.slides[0]?.ref, playlist: (t.playlist?.items || []).map((i) => i.slide), screens: screens(t),
     });
     fs.mkdirSync(path.join(out, 'templates', id), { recursive: true });
     fs.copyFileSync(file, path.join(out, file));
@@ -45,12 +59,7 @@ if (errors.length) {
 }
 fs.mkdirSync(out, { recursive: true });
 fs.writeFileSync(path.join(out, 'index.json'), JSON.stringify({ version: 1, updated: new Date().toISOString(), templates }, null, 1));
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-const name = (v) => esc(typeof v === 'object' ? v.en || Object.values(v)[0] : v);
-fs.writeFileSync(path.join(out, 'index.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Narancs Signage templates</title>
-<style>body{font:16px/1.5 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;color:#2a1a10;background:#fff8f2}a{color:#e07a35}li{margin:6px 0}</style></head><body>
-<h1>Narancs Signage community templates</h1>
-<p>Install them from the admin panel (<b>Templates → Community gallery</b>), or download a file and use <b>Import from file</b>. <a href="https://github.com/mzzg-bazsi/narancs-signage-templates">Submit your own on GitHub</a> · <a href="https://mzzg-bazsi.github.io/narancs-signage-website/">Narancs Signage</a></p>
-<ul>${templates.map((t) => `<li>${esc(t.icon)} <a href="${t.file}" download>${name(t.name)}</a> – ${t.languages.join(', ')} · ${t.slides} items</li>`).join('')}</ul>
-</body></html>\n`);
+// a statikus galéria oldal + az osztott képernyő elrendezések a fő repóból
+for (const f of fs.readdirSync('site')) fs.copyFileSync(path.join('site', f), path.join(out, f));
+fs.copyFileSync(path.join(app, 'server/public/shared/zones.js'), path.join(out, 'zones.js'));
 console.log(`✔ ${templates.length} templates → ${path.relative(process.cwd(), out)}/index.json`);
